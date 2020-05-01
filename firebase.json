@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "incomeEgressApp",
+      "public": "dist/incomeEgressApp",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

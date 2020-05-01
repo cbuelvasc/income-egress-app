@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "income-egress-app-f7e05": {
+      "hosting": {
+        "incomeEgressApp": [
+          "income-egress-app-f7e05"
+        ]
+      }
+    }
+  }
+}
