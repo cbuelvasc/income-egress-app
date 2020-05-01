@@ -118,8 +118,16 @@
               "devServerTarget": "incomeEgressApp:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "incomeEgressApp"
+    }
+  },
+  "defaultProject": "incomeEgressApp",
+  "cli": {
+    "analytics": "6d865653-e418-4d0d-a28f-a90896780ad8"
+  }
 }
