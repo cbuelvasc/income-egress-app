@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {AppState} from '../../app.reducer';
 import {Subscription} from 'rxjs';
 import {IncomeEgress} from '../../models/income-egress.model';
-import {MultiDataSet, Label} from 'ng2-charts';
+import {Label, MultiDataSet} from 'ng2-charts';
+import {AppStateIncomeEgress} from '../income-egress.reducer';
 
 @Component({
   selector: 'app-statistics',
@@ -16,15 +16,12 @@ export class StatisticsComponent implements OnInit, OnDestroy {
   egress = 0;
   totalIncome = 0;
   totalEgress = 0;
-
   incomeEgressSubscription: Subscription;
 
   public doughnutChartLabels: Label[] = ['Incomes', 'Egress'];
-  public doughnutChartData: MultiDataSet = [
-    []
-  ];
+  public doughnutChartData: MultiDataSet = [[]];
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<AppStateIncomeEgress>) {
   }
 
   ngOnInit(): void {

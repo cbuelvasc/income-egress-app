@@ -5,6 +5,7 @@ import {IncomeEgress} from '../../models/income-egress.model';
 import {Subscription} from 'rxjs';
 import {IncomeEgressService} from '../../services/income-egress.service';
 import Swal from 'sweetalert2';
+import {AppStateIncomeEgress} from '../income-egress.reducer';
 
 @Component({
   selector: 'app-detail',
@@ -16,7 +17,7 @@ export class DetailComponent implements OnInit, OnDestroy {
   incomesEgress: IncomeEgress[] = [];
   incomeEgressSubscription: Subscription;
 
-  constructor(private incomeEgressService: IncomeEgressService, private store: Store<AppState>) {
+  constructor(private incomeEgressService: IncomeEgressService, private store: Store<AppStateIncomeEgress>) {
   }
 
   ngOnInit(): void {

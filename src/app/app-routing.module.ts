@@ -1,9 +1,7 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {LogginComponent} from './auth/loggin/loggin.component';
 import {RegisterComponent} from './auth/register/register.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {dashboardRoutes} from './dashboard/dashboard.routes';
 import {AuthGuard} from './services/auth.guard';
 
 const routes: Routes = [
@@ -11,9 +9,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {
     path: '',
-    component: DashboardComponent,
-    children: dashboardRoutes,
-    canActivate: [AuthGuard]
+    canLoad: [AuthGuard],
+    loadChildren: () => import('./income-egress/income-egress.module').then(m => m.IncomeEgressModule)
   },
   {path: '**', redirectTo: ''}
 ];
