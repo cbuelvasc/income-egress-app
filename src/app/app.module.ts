@@ -21,7 +21,9 @@ import {SidebarComponent} from './shared/sidebar/sidebar.component';
 import {environment} from '../environments/environment';
 import {StoreModule} from '@ngrx/store';
 import {appReducers} from './app.reducer';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {OrderIncomesEgressPipe} from './pipes/order-incomes-egress.pipe';
+import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     DetailComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    OrderIncomesEgressPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
-    })
+    }),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
